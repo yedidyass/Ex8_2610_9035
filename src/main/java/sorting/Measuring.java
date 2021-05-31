@@ -16,13 +16,14 @@ public class Measuring {
     @Before("selectAllSort()")
     public void beforeSort(JoinPoint jp){
         System.out.println("Running sort in " + jp.getThis().getClass() +
-                jp.getArgs()[0].getClass().getSimpleName() + " with array size 100000");
+                 " with " + jp.getSignature().getDeclaringType().getSimpleName() + " size " +
+                ((Integer[])jp.getArgs()[0]).length);
         start = System.currentTimeMillis();
     }
 
     @After("selectAllSort()")
     public void afterSort(JoinPoint jp){
-        System.out.println("Function sort in " + jp.getThis().getClass() +
+        System.out.println(jp.getSourceLocation().getClass() + "Function sort in " + jp.getThis().getClass() +
                 " took <" + (System.currentTimeMillis() - start) + "> ms");
     }
 
