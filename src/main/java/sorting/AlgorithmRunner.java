@@ -1,4 +1,4 @@
-package sortingClean;
+package sorting;
 import java.util.Random;
 
 // TODO: Add dependency injection and annotations to this file

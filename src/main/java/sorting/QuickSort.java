@@ -1,4 +1,4 @@
-package sortingClean;
+package sorting;
 
 public class QuickSort implements SortingAlgorithm {
     int partition(Comparable arr[], int low, int high)

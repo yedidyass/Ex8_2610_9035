@@ -1,4 +1,4 @@
-package sortingClean;
+package sorting;
 
 // TODO: Add java classes (in separate files for annotations and aspects)
 public class MainApp {

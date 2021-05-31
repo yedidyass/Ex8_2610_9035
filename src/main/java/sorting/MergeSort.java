@@ -1,4 +1,4 @@
-package sortingClean;
+package sorting;
 
 public class MergeSort implements SortingAlgorithm {
     public void sort(Comparable[] array){
