@@ -18,7 +18,7 @@ public class Measuring {
     @Before("selectAllSort()")
     public void beforeSort(JoinPoint jp){
         System.out.println("Running sort in " + jp.getThis().getClass() +
-                 " with array " + " size " +
+                 " with array size " +
                 ((Integer[])jp.getArgs()[0]).length);
         start = System.currentTimeMillis();
     }
