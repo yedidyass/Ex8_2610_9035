@@ -6,6 +6,8 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
+import java.nio.charset.StandardCharsets;
+
 @Aspect
 public class Measuring {
 
@@ -16,14 +18,14 @@ public class Measuring {
     @Before("selectAllSort()")
     public void beforeSort(JoinPoint jp){
         System.out.println("Running sort in " + jp.getThis().getClass() +
-                 " with " + jp.getSignature().getDeclaringType().getSimpleName() + " size " +
+                 " with array " + " size " +
                 ((Integer[])jp.getArgs()[0]).length);
         start = System.currentTimeMillis();
     }
 
     @After("selectAllSort()")
     public void afterSort(JoinPoint jp){
-        System.out.println(jp.getSourceLocation().getClass() + "Function sort in " + jp.getThis().getClass() +
+        System.out.println("Function sort in " + jp.getThis().getClass() +
                 " took <" + (System.currentTimeMillis() - start) + "> ms");
     }
 
