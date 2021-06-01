@@ -12,19 +12,21 @@ import java.nio.charset.StandardCharsets;
 public class Measuring {
 
     long start;
+
     @Pointcut("execution(* *.*.sort*(..))")
-    private void selectAllSort(){}
+    private void selectAllSort() {
+    }
 
     @Before("selectAllSort()")
-    public void beforeSort(JoinPoint jp){
+    public void beforeSort(JoinPoint jp) {
         System.out.println("Running sort in " + jp.getThis().getClass() +
-                 " with array size " +
-                ((Integer[])jp.getArgs()[0]).length);
+                " with array size " +
+                ((Integer[]) jp.getArgs()[0]).length);
         start = System.currentTimeMillis();
     }
 
     @After("selectAllSort()")
-    public void afterSort(JoinPoint jp){
+    public void afterSort(JoinPoint jp) {
         System.out.println("Function sort in " + jp.getThis().getClass() +
                 " took <" + (System.currentTimeMillis() - start) + "> ms");
     }

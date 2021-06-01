@@ -1,5 +1,6 @@
 package sorting;
 
+import javax.enterprise.inject.Alternative;
 public class BubbleSort implements SortingAlgorithm {
     public void sort(Comparable[] array) {
         int n = array.length;

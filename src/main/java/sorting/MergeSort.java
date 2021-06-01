@@ -1,5 +1,7 @@
 package sorting;
 
+import javax.enterprise.inject.Alternative;
+
 public class MergeSort implements SortingAlgorithm {
     public void sort(Comparable[] array){
         mergeSort(array, array.length);
